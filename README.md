@@ -17,9 +17,9 @@ The MobileNet model is used as the base model, with additional layers added to e
 ## 🧑🏻‍💻 Model Deployment
 
 The trained model is saved in multiple formats for deployment:
-- **TensorFlow Lite (tflite)**
-- **TensorFlow.js (tfjs)**
-- **SavedModel** for TensorFlow Serving
+- [**TensorFlow Lite**](tflite)
+- [**TensorFlow.js**](tfjs_model)
+- [**SavedModel**](saved_model) for TensorFlow Serving
 
 These formats allow the model to be deployed in web or mobile applications, making it versatile for various use cases.
 
@@ -45,7 +45,7 @@ You can load the pretrained model using the following command:
 
 ```bash
 sudo docker run -d --name tf_serving_predict \
-  -v /home/bima/Documents/Github/Proyek Klasifikasi Gambar - Bima Rakajati/saved_model:/models/predict \
+  -v /repository_path/saved_model:/models/predict \
   -p 8501:8501 \
   -e MODEL_NAME=predict \
   tensorflow/serving:latest
