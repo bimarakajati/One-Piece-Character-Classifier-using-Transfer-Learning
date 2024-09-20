@@ -1,54 +1,41 @@
 # 🍖 One Piece Character Classifier Using Transfer Learning
 
-This project aims to classify characters from the anime One Piece using transfer learning. The dataset used for this project is sourced from Kaggle and contains 18 classes of characters from the anime. The dataset is split into 80% for training and 20% for testing.
+This project implements a character classifier for the popular anime One Piece using transfer learning techniques. The classifier can identify 18 different characters from the series with high accuracy, making it a valuable tool for fans and developers working on One Piece related projects.
 
-## 💡 Project Overview
+## 💡 Key Features
 
-- **Base Model**: MobileNet
-- **Dataset**: [Kaggle](https://www.kaggle.com/datasets/ibrahimserouis99/one-piece-image-classifier) (18 classes of One Piece characters)
-- **Data Split**: 80% training, 20% testing
-- **Model Accuracy**: Achieved 96% accuracy on the validation dataset
+- Utilizes MobileNet as the base model with additional custom layers
+- Trained on a dataset of 18 One Piece character classes from [Kaggle](https://www.kaggle.com/datasets/ibrahimserouis99/one-piece-image-classifier)
+- Achieves 96% accuracy on the validation dataset
+- Deployed in multiple formats for versatile use:
+  - [**TensorFlow Lite**](tflite)
+  - [**TensorFlow.js**](tfjs_model)
+  - [**SavedModel**](saved_model) for TensorFlow Serving
 
-## 🏗️ Model Architecture
+## 🏗️ Technical Details
 
-The MobileNet model is used as the base model, with additional layers added to enhance its performance. The model is trained using the training dataset and evaluated on the validation dataset.
-
-## 🧑🏻‍💻 Model Deployment
-
-The trained model is saved in multiple formats for deployment:
-- [**TensorFlow Lite**](tflite)
-- [**TensorFlow.js**](tfjs_model)
-- [**SavedModel**](saved_model) for TensorFlow Serving
-
-These formats allow the model to be deployed in web or mobile applications, making it versatile for various use cases.
+- **Data Split:** 80% training, 20% testing
+- **Model Architecture:** MobileNet base with custom layers
+- **Inference Methods:** Web interface via Streamlit and API endpoints via TensorFlow Serving
 
 ## ✍ Usage
 
-The model can be used to classify characters from the anime One Piece with high accuracy, making it a valuable tool for fans and developers working on related projects.
+The model can be easily integrated into various applications, including:
+- Fan websites and apps
+- Character recognition tools
+- Content moderation for One Piece-related platforms
 
-## 🤔 Inference with Streamlit App
+## 🧑🏻‍💻 Deployment Using Streamlit Web App
 
-![One Piece Character Classifier](output/-2147483648_-212616.jpg)
+![One Piece Character Classifier](output/-2147483648_-212620.jpg)
+- Available online at: https://onepiececlassifier.streamlit.app/
+- Can be run locally using: `streamlit run app.py`
 
-The model is deployed as a Streamlit app for easy access. You can try it out in:
-
-```
-https://onepiececlassifier.streamlit.app/
-```
-
-Or run it locally using the following command:
-
-```bash
-streamlit run app.py
-```
-
-## 🤔 Inference with Tensorflow Serving (Docker)
+## 🧑🏻‍💻 Deployment Using TensorFlow Serving with Docker
 
 ![One Piece Character Classifier](output/photo_2024-09-19_22-26-23.jpg)
 
-This document provides a step-by-step guide on how to use a pretrained model to perform inference on a new image.
-
-### Step 1: Install the required packages
+### Step 1: Install the Required Packages
 
 To run this notebook, you will need to install the required packages. You can install them using the following command:
 
@@ -56,9 +43,9 @@ To run this notebook, you will need to install the required packages. You can in
 pip install -r requirements.txt
 ```
 
-### Step 2: Load the pretrained model with docker and tensorflow serving
+### Step 2: Run the TensorFlow Serving Docker Container
 
-You can load the pretrained model using the following command:
+You can run the TensorFlow Serving Docker container using the following command:
 
 ```bash
 sudo docker run -d --name tf_serving_predict \
@@ -68,11 +55,15 @@ sudo docker run -d --name tf_serving_predict \
   tensorflow/serving:latest
 ```
 
-### Step 3: Perform inference on a new image
+### Step 3: Perform Inference on a New Image
 
-You can now perform inference on a new image using the inference notebook provided in this repository.
+You can now perform inference on a new image using the [inference notebook](inference.ipynb) provided in this repository or by sending a POST request to the TensorFlow Serving API endpoint. The API endpoint for the TensorFlow Serving is:
 
-### Step 4: Stop the docker container
+```
+http://localhost:8501/v1/models/predict:predict
+```
+
+### Step 4: Stop the Docker Container
 
 After you are done with the inference, you can stop the docker container using the following command:
 
