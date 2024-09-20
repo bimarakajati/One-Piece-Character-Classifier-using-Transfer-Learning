@@ -1,4 +1,4 @@
-# One Piece Character Classifier Using Transfer Learning
+# 🍖 One Piece Character Classifier Using Transfer Learning
 
 This project aims to classify characters from the anime One Piece using transfer learning. The dataset used for this project is sourced from Kaggle and contains 18 classes of characters from the anime. The dataset is split into 80% for training and 20% for testing.
 
@@ -29,6 +29,7 @@ The model can be used to classify characters from the anime One Piece with high 
 ## 🤔 Inference with Streamlit App
 
 ![One Piece Character Classifier](output/-2147483648_-212616.jpg)
+
 The model is deployed as a Streamlit app for easy access. You can try it out in:
 
 ```
@@ -44,6 +45,7 @@ streamlit run app.py
 ## 🤔 Inference with Tensorflow Serving (Docker)
 
 ![One Piece Character Classifier](output/photo_2024-09-19_22-26-23.jpg)
+
 This document provides a step-by-step guide on how to use a pretrained model to perform inference on a new image.
 
 ### Step 1: Install the required packages

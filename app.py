@@ -22,7 +22,7 @@ def preprocess_image(image):
     img_array = np.expand_dims(img_array, axis=0)
     return img_array
 
-st.title("One Piece Character Classifier")
+st.title("🍖 One Piece Character Classifier")
 
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 
