@@ -1,4 +1,4 @@
-# 🍖 One Piece Character Classifier Using Transfer Learning
+# 🍖 One Piece Character Classifier using Transfer Learning
 
 This project implements a character classifier for the popular anime One Piece using transfer learning techniques. The classifier can identify 18 different characters from the series with high accuracy, making it a valuable tool for fans and developers working on One Piece related projects.
 
@@ -25,13 +25,13 @@ The model can be easily integrated into various applications, including:
 - Character recognition tools
 - Content moderation for One Piece-related platforms
 
-## 🧑🏻‍💻 Deployment Using Streamlit Web App
+## 🧑🏻‍💻 Deployment using Streamlit Web App
 
 ![One Piece Character Classifier](output/-2147483648_-212620.jpg)
 - Available online at: https://onepiececlassifier.streamlit.app/
 - Can be run locally using: `streamlit run app.py`
 
-## 🧑🏻‍💻 Deployment Using TensorFlow Serving with Docker
+## 🧑🏻‍💻 Deployment using TensorFlow Serving with Docker
 
 ![One Piece Character Classifier](output/photo_2024-09-19_22-26-23.jpg)
 
